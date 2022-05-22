@@ -301,12 +301,12 @@ const MeetingPage = (props) => {
     }
     const  videoStop = ()=>{
         socket.emit('cameraStop',peerId)
-        const tracks = cameraRef.current.srcObject.getTracks();
-        tracks.forEach((track) =>{
-            if(track.kind === 'video')
-            {
-                track.stop();
-            }});
+        // const tracks = cameraRef.current.srcObject.getTracks();
+        // tracks.forEach((track) =>{
+        //     if(track.kind === 'video')
+        //     {
+        //         track.stop();
+        //     }});
     }
     
     const audioOn = () => { 
