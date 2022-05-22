@@ -41,7 +41,7 @@ const Header = ()=> {
     }
  
     setTimeout (()=>{
-        axios.post('http://localhost:3000/img',{email: user.email})
+        axios.post('https://direct-meet-2478y.ondigitalocean.app/img',{email: user.email})
         .then((data)=>{
             setImgSrc(data.data.img);
         })
@@ -52,7 +52,7 @@ const Header = ()=> {
     },[])
 
     const Logout = () => { 
-        axios.post('http://localhost:3000/user/logout')
+        axios.post('https://direct-meet-2478y.ondigitalocean.app/user/logout')
         .then((data)=>{ 
             
             if(data.data.message === 'user logged out')
@@ -79,7 +79,7 @@ const Header = ()=> {
                     setImgSrc(dataURL)
                     const data = {confirmEmail:userInfo.email ,  buffer:dataURL, originalname:x.files[0].name , mimetype:x.files[0].type  }
 
-                        axios.post('http://localhost:3000/uploadphoto',data)
+                        axios.post('https://direct-meet-2478y.ondigitalocean.app/uploadphoto',data)
                         .then((e)=>{
                             console.log('img updated .. ');
                         })
@@ -187,7 +187,7 @@ const Header = ()=> {
                         user.img=''
                         localStorage.setItem('user', JSON.stringify(user))
                         const data = { Email:userInfo.email}
-                        axios.post('http://localhost:3000/DeleteProfilePhoto',data)
+                        axios.post('https://direct-meet-2478y.ondigitalocean.app/DeleteProfilePhoto',data)
                         location.reload();
                     }}
                      > Delete Profile Photo </button>
@@ -202,7 +202,7 @@ const Header = ()=> {
                                     const data = { Email: userInfo.email}
                                     localStorage.setItem('token','null' );
                                     localStorage.setItem('user','null');
-                                    axios.post('http://localhost:3000/DeleteAccount',data)
+                                    axios.post('https://direct-meet-2478y.ondigitalocean.app/DeleteAccount',data)
                                     navigate(`/`);
                                     location.reload();
                                 } 
