@@ -1,0 +1,75 @@
+.edit_profile {
+
+    width: 90%;
+    display: flex;
+    justify-content:center;
+}
+.edit_profile_form {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.edit_profile_form [type="text"] {
+
+    width:100%;
+    height:60px;
+    padding:10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    outline: none;
+    background:transparent;
+    border:none;
+    border-bottom: 2px solid white;
+    color: white;
+    text-align: center;
+    font-size:20px;
+    font-family: 'Cairo', sans-serif;
+}
+.edit_profile_form [type="submit"] {
+
+    margin-top: 50px;
+    width:90px;
+    height:50px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Cairo', sans-serif;
+    background: transparent;
+    border: 2px solid whitesmoke;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.edit_profile_form [type="submit"]:hover {
+
+    background-image: linear-gradient( 109.6deg,  rgba(116,18,203,1) 11.2%, rgba(230,46,131,1) 91.2% );
+    box-shadow: 0px 0px 10px 2px white;
+}
+.edit_profile_form [type="button"] {
+
+    margin-top: 50px;
+    width:90px;
+    height:50px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Cairo', sans-serif;
+    background: transparent;
+    border: 2px solid whitesmoke;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 40px;
+}
+.edit_profile_form [type="button"]:hover {
+    
+    color: #FF5101;
+    text-align: center;
+}
+
+
+.emailError {
+    width:100%;
+    color: orange;
+    margin-top:30px;
+    text-align: center;
+    font-weight: bolder;
+}

@@ -1,0 +1,327 @@
+.meeting_page{
+    width: 100%;
+    height: 93vh;
+    overflow: hidden;
+    display: flex;
+    overflow: hidden;
+   justify-content: center;
+    /* background-color:rgba(217, 23, 23, 0.92) */
+}
+.logoJoin{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.footer{
+    width: 100%;
+    height: 8%;
+    position: absolute;
+    bottom: 0;
+    /* background-color:rgba(0, 0, 0, 0.428); */
+    font-size:25px;
+    color:rgb(255, 255, 255);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.footer i {
+    margin: 0 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #00000075;
+    box-shadow: 0px 5px 10px black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+.streamBox{
+    width: 100%;
+    height: 84vh;
+    /* background-color:red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.massagesNum{
+    background-color: rgb(250, 69, 69);
+    width: 30px;
+    height: 30px;
+    border-radius:50%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size:15px;
+    margin-left: -20px;
+}
+.userImgVideo{
+    font-size:60px
+}
+.UsersList{
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.657);
+    color:white;
+    border-radius:10px;
+    position: absolute;
+}
+.videoScreen{
+    width: 100%;
+    height: 95%;
+    display: inline;
+    border:2px solid rgb(70, 104, 171);
+    background-color: #414242;
+}
+.videoBox{
+    width: 40%;
+    border:2px solid rgb(18, 119, 221);
+    border-radius:20px;
+    overflow: hidden;
+    margin: 20px;
+    background-color: black;
+}
+.videoStopBox{
+    width: 100%;
+    height: 100%;
+    background-color: #414242;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.userInfo{
+    padding: 0 10px;
+    width: 100%;
+    height: 30px;
+    background-color:rgb(32, 31, 31);
+    color:white;
+}
+.userInfo .fa-microphone-slash{
+    color: red;
+    float: right;
+    margin-top: 5px;
+
+}
+.userImgVideo{
+    width: 25%;
+    height: 30%;
+    border-radius:50%;
+    color: white;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: #5B8BE4;
+}
+.video{
+    width: 100%;
+    margin-bottom: -6px;
+}
+
+
+.pup{
+    width: 200px;
+    background-color:rgba(0, 0, 0, 0.398);
+    margin-bottom: 160px;
+    position: absolute;
+    border-radius:10px;
+    overflow: hidden;
+}
+.createRooms{
+    max-height:400px;
+    background-color:black;
+    border-radius:20px;
+    position: absolute;
+    padding: 20px;
+    overflow: hidden;
+    width:300px ;
+}
+.RoomsList{
+    position: absolute;
+    width: 300px;
+    padding: 20px;
+    background-color: black;
+    color: white
+}
+.RoomsButtons{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 20px;
+    
+}
+.createRoomsInput{
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    
+
+}
+.RoomsButtons .btn1{
+    border:none;
+    width: 30px;
+    border-radius: 5px;
+    background-color: #35496D;
+    color:aliceblue;
+}
+.RoomsButtons .btn2{
+    border:none;
+    width: 80px;
+    border-radius: 5px;
+    background-color: #696b6f;
+    color:aliceblue;
+}
+
+.RoomsButtons .btn3{
+    border:none;
+    width: 80px;
+    border-radius: 5px;
+    background-color: #6c2f92;
+    color:aliceblue;
+}
+
+.pup i {
+    width: 100%;
+    border-radius:0;
+    margin: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content:flex-start;
+    padding: 0 5px;
+    
+}
+.pup i:hover {
+    background-color:#5B8BE4;
+}
+.pup i snap{
+  font-size:13px;
+  margin: 0 10px;
+    
+}
+.meetingLink{
+    width: 500px;
+    padding: 20px;
+    background-color:rgba(199, 197, 197, 0.264);
+    color:white;
+    border-radius: 20px;
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    word-break: break-all;
+}
+.meetingLink .fa-xmark{
+    font-size:20px;
+    float: right;
+    cursor: pointer;
+}
+.meetingLink .fa-xmark:hover{
+    color:gray;
+}
+.meetingLink .fa-clone{
+    font-size:20px;
+    float: right;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.meetingLink .fa-clone:hover{
+   color:gray;
+}
+.videoStopBox i{
+    font-size:20px;
+    color:red;
+    position: absolute;
+    margin-top: 100px;
+
+}
+.videoStopBoxA{
+    width: 27%;
+    height: 39%;
+    border-radius: 50%;
+    background-color:#35496D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.videoUserName{
+    color:white;
+    width: 100%;
+    background-color:rgb(40, 38, 38);
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin: 0;
+}
+.videoUserName  .fa-microphone-slash {
+    float: right;
+    margin-top: 5px;
+    color:rgb(225, 44, 24);
+}
+@media (max-width: 468px) {
+    .meetingLink{
+        width: 100%;
+        left: 0;
+    }
+    .footer i {
+        margin: 0 5px;
+    }
+    .videoBox{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .userImgVideo{
+        font-size:20px
+    }
+}
+@media (max-width: 1500px) {
+    .videoStopBox{
+        font-size: 25px;
+    }
+    .streamBox{
+        width: 100%;
+    }
+   
+    .userImgVideo{
+        font-size:40px
+    }
+}
+@media (max-width: 568px) {
+    .screenBox{
+       width: 100%;
+    }
+    .meeting_page{
+        display: block;
+    }
+    .videoBox{
+        width: 100%;
+    }
+    .videoUserName{
+        height: 30px;
+    }
+    .screenBox{
+        width: 100%;
+    }
+  
+    .streamBox{
+        width: 100%;
+    }
+    .videoStopBox{
+        font-size: 20px;
+    }
+    .meeting_page{
+        height: 90vh;
+        padding-top: 16px;
+    }
+    .userImgVideo{
+        font-size:25px
+    }
+}

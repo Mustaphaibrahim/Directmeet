@@ -1,0 +1,255 @@
+.chatBox{
+    width: 500px;
+    height: 91% ;
+    background-color:rgba(6, 6, 6, 0.813);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+.icoBox{
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+.File_preview{
+    width: 100%;
+    padding-top:30px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align:center;
+   
+}
+.LinkBox{
+    width: 100%;
+    height: 100px;
+}
+.text-message-chat a{
+    color:rgb(152, 186, 245);
+   
+}
+.text-message-chat iframe{
+    width: 300px;
+    height: 300px;
+   
+}
+.File_preview i{
+    width: 100%;
+    font-size: 60px;
+    text-align:center;
+    padding-bottom: 20px;
+   
+}
+.fa-up-right-from-square , .icoBox .fa-xmark{
+    width: 30px;
+    height: 30px;
+    color:white;
+    text-align:right;
+    padding-right: 10px;
+    cursor: pointer;
+    margin-left:10px;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+   
+}
+.react-input-emoji--container{
+    display: none;
+}
+.icoBox .fa-xmark{
+    font-size:20px
+}
+
+.emoji-mart .emoji-mart-light{
+    margin-left: 50%;
+}
+.chatForm{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 5px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    z-index: 7;
+}
+.chatForm .textarea{
+    width: 75%;
+    max-height: 100%;
+    border:none;
+    border-radius:5px;
+    outline-color: rgb(78, 158, 159);
+}
+.chatForm .textarea::placeholder
+{
+    color:rgb(141, 141, 141);
+    letter-spacing: 3px;
+    text-align: left;
+    font-family: 'Cairo', sans-serif;
+}
+.up_imo_Box{
+    width: 15%;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.up_imo_Box [type="file"]{
+    opacity: 0;
+    width: 1px;;
+}
+.up_imo_Box i{
+    cursor: pointer;
+    font-size:22px;
+}
+.up_imo_Box .fa-solid{
+    text-align:right;
+}
+.fa-paper-plane{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(130, 130, 234);
+    cursor: pointer;
+}
+.chat-list{
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    overflow-y: auto;
+    list-style: none;
+    padding-left:0;
+    padding-bottom: 100px;
+}
+.chat-list li{
+    margin: 10px 0;
+}
+.main-file-lists{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-y: none;
+    overflow-x: none;
+}
+
+.file-lists{
+    width: 200px;
+    border-radius: 10px;
+    border: 2px solid white;
+    overflow: hidden;
+    background-color:white;
+    margin-left: 47px;
+    
+}
+
+.file-info{
+    
+    width: 100%;
+    height: 30px;
+    color: white;
+    padding:4px;
+    font-size:14px;
+    background-color:rgba(0, 0, 0, 0.48);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+.file-info:hover{
+    background-color: black;
+}
+.fa-solid{
+    cursor: pointer;
+}
+.onDragOver{
+    width: 80%;
+    max-height: 100%;
+    background-color: rgba(175, 175, 175, 0.476);
+    border-radius:5px;
+    outline-color: rgb(78, 158, 159);
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.onDragOver-click{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 5;
+}
+.dragText{
+    width: 100%;
+    color:white;
+    letter-spacing: 3px;
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+    position: absolute;
+}
+.chat-profile-main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.chat-profile-pic{
+    width: 35px;
+    height: 35px;
+    border-radius:50%;
+    /* border: 1px solid white; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background-color: rgb(50, 98, 141);
+}
+
+.chat-profile-name{
+    color:white;
+    margin-left:12px;
+    font-size: 12px;
+    justify-self: flex-end;
+}
+.chat-profile-time{
+    color:white;
+    margin-left:35px;
+    font-size: 10px;
+    color: grey;
+}
+#chat-li{
+    padding: 0 10px;
+}
+#chat-li:hover{
+background-color: rgba(211, 211, 211, 0.183);
+}
+.dark{
+    margin-top:-400px;
+    position: absolute;
+    z-index: 10;
+}
+.text-message-chat{
+    color: white;
+    margin-left:47px;
+    word-break: break-all;
+}
+
+@media (max-width: 668px) {
+   
+    .chatBox{
+        width: 100%;
+        height: 100%;
+        top:0
+    }
+}
+::-webkit-scrollbar {
+    width: 0px;
+}
+
