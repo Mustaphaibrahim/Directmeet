@@ -55,6 +55,8 @@ const MeetingPage = (props) => {
     const [ RoomsLog, setRoomsLog] = useState(false);
     const [ peerId,setPeerId ] = useState('');
     const [ userScreen, setUserScreen] = useState(false);
+    const [ pageW, setPageW] = useState('');
+    const [ H, setH] = useState('');
    
     const [ x, setX] = useState(false);
     const [ peers, setPeers] = useState([]);
@@ -170,7 +172,7 @@ const MeetingPage = (props) => {
         peer.on('call', function(call) {
         
                 call.answer(); 
-                console.log(call.peer );
+                console.log(call.peer);
                
                 
                 if(ScreenCall)
@@ -332,19 +334,26 @@ const MeetingPage = (props) => {
 
 
     window.addEventListener('resize', ()=>{
+        const c = document.querySelector('.meeting_page');
+        setPageW(c.clientWidth);
             const x = document.querySelector('.videoBox')
             if(camera == false) 
             {
                 setwindH( `${x.clientWidth/100*76.5}px`);
+                setWind( x.clientWidth );
+                setH(x.clientWidth/100*76.5);
             }
     });
 
     setTimeout(()=>{
+        const c = document.querySelector('.meeting_page');
+        setPageW(c.clientWidth);
         const x = document.querySelector('.videoBox');
         if(camera == false) 
         {
             setwindH( `${x.clientWidth/100*76.5}px`);
-            setWind( x.clientWidth )
+            setWind( x.clientWidth );
+            setH(x.clientWidth/100*76.5);
         }
     },10)
         
@@ -399,12 +408,12 @@ const MeetingPage = (props) => {
             }
         
 
-            <div id='streamBox' className="streamBox" style={{ width: streamBoxWidth ,height:(screen || userScreen)?'95%' :'84%' }} >
+            <div id='streamBox' className="streamBox" style={{ width: streamBoxWidth ,height:(screen || userScreen )? ( pageW < 600 )? '55%' : '100%' :'84%'}} >
 
                 {
                     peers.map((peer)=>{
                         
-                        return<div className="videoBox" style={{width: (screen || userScreen )?'100%':(peers.length <= 2 )? '40%' : (peers.length <= 3)? '30%': '20%'}}> 
+                        return<div className="videoBox" style={{width: (screen || userScreen )?'100%':(peers.length <= 2 )? (pageW < 600 )? '70%' :'40%' : (peers.length <= 3)? '30%': '20%'}}> 
                         <p style={{display:'none' }} >{peer.peerId}</p>
                         {
                             (peer.cam)?
