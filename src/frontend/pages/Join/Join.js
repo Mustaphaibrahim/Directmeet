@@ -8,7 +8,6 @@ import "./Join.css";
   const [userName, setUserName] = useState("");
   const [ dis , setDis] = useState (true);
  
-
   const handleChange = (e) => {
     e.preventDefault();
     setUserName(e.target.value);
@@ -23,9 +22,7 @@ import "./Join.css";
       setTimeout (()=>{
         setDis(false)
       },1000);
-
     }
-   
   };
 
   return (

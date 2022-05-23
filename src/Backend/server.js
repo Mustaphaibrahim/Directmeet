@@ -306,7 +306,7 @@ io.on('connection', socket => {
                 }
                 return peer
             });
-            io.sockets.in(roomId).emit('micStop',peers)
+            io.sockets.in(roomId).emit('micStop',peers,peerId)
         });
         socket.on('massage', (msg) => {
             io.sockets.in(roomId).emit('massage',msg)

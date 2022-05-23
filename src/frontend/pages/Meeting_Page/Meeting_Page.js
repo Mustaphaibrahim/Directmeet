@@ -56,10 +56,6 @@ const MeetingPage = (props) => {
     const [ peerId,setPeerId ] = useState('');
     const [ userScreen, setUserScreen] = useState(false);
    
-    // const [ ScreenCall, setScreenCall] = useState(false);
-    // const [ VideoCall, setVideoCall] = useState(false);
-    // const [ AudioCall, setAudioCall] = useState(false);
-   
     const [ x, setX] = useState(false);
     const [ peers, setPeers] = useState([]);
     const [ peers2, setPeers2] = useState([]);
@@ -125,21 +121,28 @@ const MeetingPage = (props) => {
             setPeers(peers);
         });
         socket.on('camera', (peers) => {
-            setPeers(peers)
-          
+            setPeers(peers);
         });
         socket.on('cameraStop', (peers) => {
-            setPeers(peers)
+            setPeers(peers);
         });
         socket.on('mic', (peers) => {
-            setPeers(peers)
+            setPeers(peers);
             ScreenCall=false;
             VideoCall = false;
             AudioCall = true;
-            
         });
-        socket.on('micStop', (peers) => {
-            setPeers(peers)
+        socket.on('micStop', (peers,peerId) => {
+            setPeers(peers);
+            const x = document.getElementById('streamBox');
+            peers.map((peer,i)=>{
+                
+                if( peer.peerId == peerId )
+                {
+                    x.children[i].children[2].pause();
+                }
+
+            })
         });
         socket.on('videoCall', (t) => {
             ScreenCall=false;
@@ -167,7 +170,9 @@ const MeetingPage = (props) => {
         peer.on('call', function(call) {
         
                 call.answer(); 
-                console.log(ScreenCall);
+                console.log(call.peer );
+               
+                
                 if(ScreenCall)
                 {
                     call.on('stream', function(remoteStream) {
@@ -190,6 +195,7 @@ const MeetingPage = (props) => {
                 if(VideoCall)
                 {
                     call.on('stream', function(remoteStream) {
+                        
                         const x = document.getElementById('streamBox');
                         for (let i= 0; i < x.children.length; i++) {
                             x.children[i].children[0].textContent
@@ -210,16 +216,11 @@ const MeetingPage = (props) => {
                             if( x.children[i].children[0].textContent == call.peer  )
                             {
                                 x.children[i].children[2].srcObject=remoteStream;
-                                console.log(x.children[i].children[2]);
                             }
                         }
                     })
                 }
-                
         });
-
-      
-
     },[]);
 
   
@@ -264,6 +265,7 @@ const MeetingPage = (props) => {
     const  screenStop = ()=>{
         setScreen(false);
         socket.emit('screenStop')
+        const tracks =  screenRef.current.srcObject.getTracks()
         tracks.forEach((track) =>{
             if(track.kind === 'audio')
             {
@@ -284,6 +286,7 @@ const MeetingPage = (props) => {
             }
         });
     }
+
     const cameraOn = () => { 
         socket.emit('camera',peerId)
         navigator.mediaDevices.getUserMedia({ video:{ width:'100%'} })
@@ -301,12 +304,12 @@ const MeetingPage = (props) => {
     }
     const  videoStop = ()=>{
         socket.emit('cameraStop',peerId)
-        // const tracks = cameraRef.current.srcObject.getTracks();
-        // tracks.forEach((track) =>{
-        //     if(track.kind === 'video')
-        //     {
-        //         track.stop();
-        //     }});
+        const tracks = cameraRef.current.srcObject.getTracks();
+        tracks.forEach((track) =>{
+            if(track.kind === 'video')
+            {
+                track.stop();
+            }});
     }
     
     const audioOn = () => { 
@@ -314,7 +317,6 @@ const MeetingPage = (props) => {
         navigator.mediaDevices.getUserMedia({ audio:true })
         .then((stream)=>{ 
             setMic(true);
-            // audioRef.current.srcObject = stream
             peers.map((userPeer)=>{
                 if(peerId != userPeer.peerId)
                 {
@@ -325,13 +327,7 @@ const MeetingPage = (props) => {
     }
    
     const  audioStop = ()=>{
-        socket.emit('micStop',peerId)
-        // const tracks = audioRef.current.srcObject.getTracks();
-        // tracks.forEach((track) =>{
-        //     if(track.kind === 'audio')
-        //     {
-        //         track.stop();
-        //     }});
+        socket.emit('micStop',peerId);
     }
 
 
@@ -339,11 +335,8 @@ const MeetingPage = (props) => {
             const x = document.querySelector('.videoBox')
             if(camera == false) 
             {
-                setwindH( `${x.clientWidth/100*76.5}px`)
-               
+                setwindH( `${x.clientWidth/100*76.5}px`);
             }
-           
-         
     });
 
     setTimeout(()=>{
@@ -356,35 +349,8 @@ const MeetingPage = (props) => {
     },10)
         
   
-
-
     return (
-        <div className="meeting_page" 
-            onClick={ ()=>{
-                if(screen || x1.clientWidth < 600 )
-                {
-                    (footer)?
-                    setFooter(false)
-                    :setFooter(true);
-                }
-            }}
-            onMouseMove={(e)=>{ 
-                if(screen)
-                {
-                    if(  e.clientY > windH-100  )
-                    {
-                        setFooter(true);
-                    }
-                    if(  e.clientY < windH-290  )
-                    {
-                        setFooter(false);
-                    }
-
-                }else{
-                    setFooter(true);
-                }
-               
-            }}>
+        <div className="meeting_page" >
             {
                 (loginOn)?'':<div className='logo logoJoin' ></div>
             }
@@ -417,7 +383,6 @@ const MeetingPage = (props) => {
            }
                
             { 
-                
                 (userScreen)?
                 <div className="screenBox" >
                 <video id='videoScreen' className='videoScreen' ref={screen1Ref}   autoPlay ></video>
@@ -426,12 +391,9 @@ const MeetingPage = (props) => {
                 :null
             }
             { 
-            
                 (screen)?
                 <div className="screenBox" >
-                
                 <video id='videoScreen' className='videoScreen' ref={screenRef}   autoPlay ></video>
-                
                 </div>
                 :null
             }
@@ -442,7 +404,7 @@ const MeetingPage = (props) => {
                 {
                     peers.map((peer)=>{
                         
-                        return<div className="videoBox" style={{width: (screen || userScreen )?'100%':(peers.length <= 2 )? '40%' : (peers.length <= 3)? '30%': '20%',height:windH-50 }}> 
+                        return<div className="videoBox" style={{width: (screen || userScreen )?'100%':(peers.length <= 2 )? '40%' : (peers.length <= 3)? '30%': '20%'}}> 
                         <p style={{display:'none' }} >{peer.peerId}</p>
                         {
                             (peer.cam)?
@@ -452,14 +414,13 @@ const MeetingPage = (props) => {
                                 <div className="userImgVideo" > {peer.userInfo.userName.charAt(0).toUpperCase() } </div>
                             </div>
                         }
-                       <audio  ref={audioRef} autoPlay></audio>
+                       <audio  ref={audioRef} autoPlay  ></audio>
                        <div  className='userInfo'  > {peer.userInfo.userName}
                        {
                            (peer.mic)?
-                            ''
+                           <i className="fa-solid fa-microphone"  style={{ color:'#55ac58' }} ></i> 
                            :<i className="fa-solid fa-microphone-slash"  ></i>
                        }
-                       
                        </div>
                        
                     </div>
@@ -473,11 +434,7 @@ const MeetingPage = (props) => {
 
            <Chatt dis={dis} chat={chat} setChat={setChat} id={id} massagesLingth={massagesLingth} room={room} setMassagesLingth={setMassagesLingth}  />
        
-            <motion.div className="footer"
-                animate={{y: (footer)?0 : '73px' }}
-                transition={{ duration:0.5 }}
-             
-            >
+            <div className="footer">
 
                 {
                     (camera)?
@@ -557,7 +514,7 @@ const MeetingPage = (props) => {
                 }
                 
                 
-            </motion.div>
+            </div>
            
         </div>
     )
