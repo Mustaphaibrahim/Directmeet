@@ -107,7 +107,7 @@ const Chatt = (props) => {
             <div className="icoBox" >
             <i class="fa-solid fa-up-right-from-square"
             onClick={()=>{
-                window.open('https://direct-meet-2478y.ondigitalocean.app/chatt')
+                window.open('https://direct-meet-2uhf8.ondigitalocean.app/chatt')
             }}
             ></i>
             <i class="fa-solid fa-xmark" onClick={()=>{ props.setChat(false) }} ></i>

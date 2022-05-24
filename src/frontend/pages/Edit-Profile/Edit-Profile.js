@@ -62,7 +62,7 @@ const Edit_Profile = (props) => {
            
           const data = { username: userName, email: email,  password: password , confirmEmail:confirmEmail}
           
-            axios.post('https://direct-meet-2478y.ondigitalocean.app/user/update', data )
+            axios.post('https://direct-meet-2uhf8.ondigitalocean.app/user/update', data )
             .then(()=>{ 
                 localStorage.setItem('user',JSON.stringify( data));
                 location.reload();
