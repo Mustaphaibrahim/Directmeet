@@ -32,7 +32,7 @@ const Login = (props) => {
             setLoding(true);
             e.preventDefault()
             const data = { email: email, password: password }
-            axios.post('http://localhost:3000/login',data)
+            axios.post('https://direct-meet-2478y.ondigitalocean.app/login',data)
             .then((data)=>{
                setLoding(false);
                 if( data.data.message  === 'password or email is invalid' )
@@ -60,7 +60,7 @@ const Login = (props) => {
             e.preventDefault()
            if(password === passwordConfirm) {
             const data = { username: userName, email: email, password: password}
-            axios.post('http://localhost:3000/create/user',data);
+            axios.post('https://direct-meet-2478y.ondigitalocean.app/create/user',data);
               setUserName("");
               setEmail("");
               setPassword("");

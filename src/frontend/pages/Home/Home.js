@@ -48,7 +48,15 @@ const Home = ()=>{
                     onClick={()=>{
                         setAboutText(false)
                     }}></i>
-                    <p className="home_p_text">Hallo there how are you we are a team from GErmany and we work together in this project, we will be happy if you sponsor us with our project, and we Wish that you enjoy our Applecation.
+                    <p className="home_p_text">
+                        We are a group of four enthusiastic developers striving to improve the online experience.<br/> 
+                        After one successfully year course at Digital Career
+                        Institute, learning new skills in web development, this is our first team-created Application.<br/>  
+                        As independent workers we have faced the struggle
+                        involved when creating an invoice. <br/> 
+                        Our goal is to make this process as smooth, FREE, and as fast as possible.<br/>  
+                        Thank you for visiting us and
+                        using our Application.
                     </p>
                 </>
                 :

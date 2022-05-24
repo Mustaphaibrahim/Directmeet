@@ -615,10 +615,10 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     exports.setSignature = setSignature;
 })();
 
-},{}],"3D7CW":[function(require,module,exports) {
+},{}],"aqyyN":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
-var HMR_PORT = 50989;
+var HMR_PORT = 49882;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 module.bundle.HMR_BUNDLE_ID = "2aaabacf4c0418ca";
@@ -24645,7 +24645,7 @@ const Chatt = (props)=>{
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
                         class: "fa-solid fa-up-right-from-square",
                         onClick: ()=>{
-                            window.open('http://localhost:3000/chatt');
+                            window.open('https://direct-meet-2478y.ondigitalocean.app/chatt');
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/chattPage/chattPage.js",
@@ -38770,6 +38770,8 @@ const MeetingPage = (props)=>{
     const [RoomsLog, setRoomsLog] = _react.useState(false);
     const [peerId1, setPeerId] = _react.useState('');
     const [userScreen, setUserScreen] = _react.useState(false);
+    const [pageW, setPageW] = _react.useState('');
+    const [H, setH] = _react.useState('');
     const [x1, setX] = _react.useState(false);
     const [peers1, setPeers] = _react.useState([]);
     const [peers2, setPeers2] = _react.useState([]);
@@ -38965,14 +38967,23 @@ const MeetingPage = (props)=>{
         socket.emit('micStop', peerId1);
     };
     window.addEventListener('resize', ()=>{
-        const x = document.querySelector('.videoBox');
-        if (camera == false) setwindH(`${x.clientWidth / 100 * 76.5}px`);
-    });
-    setTimeout(()=>{
+        const c = document.querySelector('.meeting_page');
+        setPageW(c.clientWidth);
         const x = document.querySelector('.videoBox');
         if (camera == false) {
             setwindH(`${x.clientWidth / 100 * 76.5}px`);
             setWind(x.clientWidth);
+            setH(x.clientWidth / 100 * 76.5);
+        }
+    });
+    setTimeout(()=>{
+        const c = document.querySelector('.meeting_page');
+        setPageW(c.clientWidth);
+        const x = document.querySelector('.videoBox');
+        if (camera == false) {
+            setwindH(`${x.clientWidth / 100 * 76.5}px`);
+            setWind(x.clientWidth);
+            setH(x.clientWidth / 100 * 76.5);
         }
     }, 10);
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -38982,7 +38993,7 @@ const MeetingPage = (props)=>{
                 className: "logo logoJoin"
             }, void 0, false, {
                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                lineNumber: 355,
+                lineNumber: 364,
                 columnNumber: 30
             }, undefined),
             loginOn ? '' : /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_join.Join, {
@@ -38990,7 +39001,7 @@ const MeetingPage = (props)=>{
                 dis: dis
             }, void 0, false, {
                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                lineNumber: 359,
+                lineNumber: 368,
                 columnNumber: 30
             }, undefined),
             meetingLink ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -39004,14 +39015,14 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 365,
+                        lineNumber: 374,
                         columnNumber: 16
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                         children: " Meeting Link "
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 367,
+                        lineNumber: 376,
                         columnNumber: 16
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -39024,25 +39035,25 @@ const MeetingPage = (props)=>{
                                     title: "copy link"
                                 }, void 0, false, {
                                     fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                    lineNumber: 370,
+                                    lineNumber: 379,
                                     columnNumber: 16
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 369,
+                                lineNumber: 378,
                                 columnNumber: 16
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 368,
+                        lineNumber: 377,
                         columnNumber: 16
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                         children: " Meeting ID "
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 374,
+                        lineNumber: 383,
                         columnNumber: 16
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -39055,24 +39066,24 @@ const MeetingPage = (props)=>{
                                     title: "copy link"
                                 }, void 0, false, {
                                     fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                    lineNumber: 377,
+                                    lineNumber: 386,
                                     columnNumber: 16
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 376,
+                                lineNumber: 385,
                                 columnNumber: 16
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 375,
+                        lineNumber: 384,
                         columnNumber: 16
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                lineNumber: 364,
+                lineNumber: 373,
                 columnNumber: 16
             }, undefined) : '',
             userScreen ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -39084,12 +39095,12 @@ const MeetingPage = (props)=>{
                     autoPlay: true
                 }, void 0, false, {
                     fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                    lineNumber: 388,
+                    lineNumber: 397,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                lineNumber: 387,
+                lineNumber: 396,
                 columnNumber: 17
             }, undefined) : null,
             screen ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -39101,12 +39112,12 @@ const MeetingPage = (props)=>{
                     autoPlay: true
                 }, void 0, false, {
                     fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                    lineNumber: 396,
+                    lineNumber: 405,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                lineNumber: 395,
+                lineNumber: 404,
                 columnNumber: 17
             }, undefined) : null,
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -39114,13 +39125,13 @@ const MeetingPage = (props)=>{
                 className: "streamBox",
                 style: {
                     width: streamBoxWidth,
-                    height: screen || userScreen ? '95%' : '84%'
+                    height: screen || userScreen ? pageW < 600 ? '55%' : '100%' : '84%'
                 },
                 children: peers1.map((peer2)=>{
                     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                         className: "videoBox",
                         style: {
-                            width: screen || userScreen ? '100%' : peers1.length <= 2 ? '40%' : peers1.length <= 3 ? '30%' : '20%'
+                            width: screen || userScreen ? '100%' : peers1.length <= 2 ? pageW < 600 ? '70%' : '40%' : peers1.length <= 3 ? '30%' : '20%'
                         },
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -39130,7 +39141,7 @@ const MeetingPage = (props)=>{
                                 children: peer2.peerId
                             }, void 0, false, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 408,
+                                lineNumber: 417,
                                 columnNumber: 25
                             }, undefined),
                             peer2.cam ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("video", {
@@ -39140,7 +39151,7 @@ const MeetingPage = (props)=>{
                                 children: "  "
                             }, void 0, false, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 411,
+                                lineNumber: 420,
                                 columnNumber: 29
                             }, undefined) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                                 className: "videoStopBox",
@@ -39156,12 +39167,12 @@ const MeetingPage = (props)=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                    lineNumber: 414,
+                                    lineNumber: 423,
                                     columnNumber: 33
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 413,
+                                lineNumber: 422,
                                 columnNumber: 29
                             }, undefined),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("audio", {
@@ -39169,7 +39180,7 @@ const MeetingPage = (props)=>{
                                 autoPlay: true
                             }, void 0, false, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 417,
+                                lineNumber: 426,
                                 columnNumber: 24
                             }, undefined),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -39184,31 +39195,31 @@ const MeetingPage = (props)=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                        lineNumber: 421,
+                                        lineNumber: 430,
                                         columnNumber: 28
                                     }, undefined) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
                                         className: "fa-solid fa-microphone-slash"
                                     }, void 0, false, {
                                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                        lineNumber: 422,
+                                        lineNumber: 431,
                                         columnNumber: 29
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 418,
+                                lineNumber: 427,
                                 columnNumber: 24
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 407,
+                        lineNumber: 416,
                         columnNumber: 31
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                lineNumber: 402,
+                lineNumber: 411,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_chattPage.Chatt, {
@@ -39221,7 +39232,7 @@ const MeetingPage = (props)=>{
                 setMassagesLingth: setMassagesLingth
             }, void 0, false, {
                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                lineNumber: 435,
+                lineNumber: 444,
                 columnNumber: 12
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -39235,7 +39246,7 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 441,
+                        lineNumber: 450,
                         columnNumber: 21
                     }, undefined) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
                         className: "fa-solid fa-video-slash",
@@ -39247,7 +39258,7 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 443,
+                        lineNumber: 452,
                         columnNumber: 21
                     }, undefined),
                     mic ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
@@ -39258,7 +39269,7 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 448,
+                        lineNumber: 457,
                         columnNumber: 21
                     }, undefined) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
                         className: "fa-solid fa-microphone-slash",
@@ -39270,7 +39281,7 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 450,
+                        lineNumber: 459,
                         columnNumber: 21
                     }, undefined),
                     screen ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
@@ -39281,7 +39292,7 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 454,
+                        lineNumber: 463,
                         columnNumber: 21
                     }, undefined) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
                         className: "fa-solid fa-display",
@@ -39291,7 +39302,7 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 455,
+                        lineNumber: 464,
                         columnNumber: 22
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
@@ -39301,7 +39312,7 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 459,
+                        lineNumber: 468,
                         columnNumber: 17
                     }, undefined),
                     pup ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -39324,13 +39335,13 @@ const MeetingPage = (props)=>{
                                         children: "Meeting Link "
                                     }, void 0, false, {
                                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                        lineNumber: 488,
+                                        lineNumber: 497,
                                         columnNumber: 35
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 484,
+                                lineNumber: 493,
                                 columnNumber: 26
                             }, undefined),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
@@ -39345,20 +39356,20 @@ const MeetingPage = (props)=>{
                                         children: "Close Meeting  "
                                     }, void 0, false, {
                                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                        lineNumber: 495,
+                                        lineNumber: 504,
                                         columnNumber: 29
                                     }, undefined),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                                lineNumber: 490,
+                                lineNumber: 499,
                                 columnNumber: 27
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 470,
+                        lineNumber: 479,
                         columnNumber: 21
                     }, undefined) : null,
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
@@ -39368,7 +39379,7 @@ const MeetingPage = (props)=>{
                         }
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 500,
+                        lineNumber: 509,
                         columnNumber: 17
                     }, undefined),
                     massagesLingth >= 1 ? chat ? setMassagesLingth(0) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -39376,23 +39387,23 @@ const MeetingPage = (props)=>{
                         children: massagesLingth
                     }, void 0, false, {
                         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                        lineNumber: 512,
+                        lineNumber: 521,
                         columnNumber: 21
                     }, undefined) : ''
                 ]
             }, void 0, true, {
                 fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-                lineNumber: 437,
+                lineNumber: 446,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/frontend/pages/Meeting_Page/Meeting_Page.js",
-        lineNumber: 353,
+        lineNumber: 362,
         columnNumber: 9
     }, undefined);
 };
-_s(MeetingPage, "nF5IwJTAK2RLW9TiEQpHjHnNk2o=", false, function() {
+_s(MeetingPage, "DivDJuqwvst5a5bW6euynE8hPiE=", false, function() {
     return [
         _reactRouterDom.useNavigate
     ];
@@ -56911,7 +56922,7 @@ const Login = (props)=>{
                 email: email,
                 password: password
             };
-            _axiosDefault.default.post('http://localhost:3000/login', data1).then((data)=>{
+            _axiosDefault.default.post('https://direct-meet-2478y.ondigitalocean.app/login', data1).then((data)=>{
                 setLoding(false);
                 if (data.data.message === 'password or email is invalid') {
                     setLogerror(true);
@@ -56937,7 +56948,7 @@ const Login = (props)=>{
                     email: email,
                     password: password
                 };
-                _axiosDefault.default.post('http://localhost:3000/create/user', data);
+                _axiosDefault.default.post('https://direct-meet-2478y.ondigitalocean.app/create/user', data);
                 setUserName("");
                 setEmail("");
                 setPassword("");
@@ -59057,8 +59068,34 @@ const Home = ()=>{
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                                         className: "home_p_text",
-                                        children: "Hallo there how are you we are a team from GErmany and we work together in this project, we will be happy if you sponsor us with our project, and we Wish that you enjoy our Applecation."
-                                    }, void 0, false, {
+                                        children: [
+                                            "We are a group of four enthusiastic developers striving to improve the online experience.",
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                                                fileName: "src/frontend/pages/Home/Home.js",
+                                                lineNumber: 52,
+                                                columnNumber: 114
+                                            }, undefined),
+                                            "After one successfully year course at Digital Career Institute, learning new skills in web development, this is our first team-created Application.",
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                                                fileName: "src/frontend/pages/Home/Home.js",
+                                                lineNumber: 54,
+                                                columnNumber: 119
+                                            }, undefined),
+                                            "As independent workers we have faced the struggle involved when creating an invoice. ",
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                                                fileName: "src/frontend/pages/Home/Home.js",
+                                                lineNumber: 56,
+                                                columnNumber: 60
+                                            }, undefined),
+                                            "Our goal is to make this process as smooth, FREE, and as fast as possible.",
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                                                fileName: "src/frontend/pages/Home/Home.js",
+                                                lineNumber: 57,
+                                                columnNumber: 99
+                                            }, undefined),
+                                            "Thank you for visiting us and using our Application."
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "src/frontend/pages/Home/Home.js",
                                         lineNumber: 51,
                                         columnNumber: 21
@@ -59070,7 +59107,7 @@ const Home = ()=>{
                                         children: "Direct Meet"
                                     }, void 0, false, {
                                         fileName: "src/frontend/pages/Home/Home.js",
-                                        lineNumber: 56,
+                                        lineNumber: 64,
                                         columnNumber: 21
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -59079,14 +59116,14 @@ const Home = ()=>{
                                             "Video Chat services allow people to have face-to-face conversations.",
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
                                                 fileName: "src/frontend/pages/Home/Home.js",
-                                                lineNumber: 57,
+                                                lineNumber: 65,
                                                 columnNumber: 116
                                             }, undefined),
                                             "And often it is more efficient than talking by screen sharing and more."
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/frontend/pages/Home/Home.js",
-                                        lineNumber: 57,
+                                        lineNumber: 65,
                                         columnNumber: 21
                                     }, undefined),
                                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -59104,7 +59141,7 @@ const Home = ()=>{
                                                 }
                                             }, void 0, false, {
                                                 fileName: "src/frontend/pages/Home/Home.js",
-                                                lineNumber: 61,
+                                                lineNumber: 69,
                                                 columnNumber: 25
                                             }, undefined),
                                             join ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV("a", {
@@ -59115,12 +59152,12 @@ const Home = ()=>{
                                                     children: "+ Start new meeting"
                                                 }, void 0, false, {
                                                     fileName: "src/frontend/pages/Home/Home.js",
-                                                    lineNumber: 75,
+                                                    lineNumber: 83,
                                                     columnNumber: 29
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/frontend/pages/Home/Home.js",
-                                                lineNumber: 74,
+                                                lineNumber: 82,
                                                 columnNumber: 29
                                             }, undefined) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
                                                 type: "submit",
@@ -59133,13 +59170,13 @@ const Home = ()=>{
                                                 children: "+ join"
                                             }, void 0, false, {
                                                 fileName: "src/frontend/pages/Home/Home.js",
-                                                lineNumber: 78,
+                                                lineNumber: 86,
                                                 columnNumber: 30
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/frontend/pages/Home/Home.js",
-                                        lineNumber: 60,
+                                        lineNumber: 68,
                                         columnNumber: 21
                                     }, undefined)
                                 ]
@@ -59148,12 +59185,12 @@ const Home = ()=>{
                                 className: "home_line"
                             }, void 0, false, {
                                 fileName: "src/frontend/pages/Home/Home.js",
-                                lineNumber: 89,
+                                lineNumber: 97,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
                                 fileName: "src/frontend/pages/Home/Home.js",
-                                lineNumber: 90,
+                                lineNumber: 98,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -59168,14 +59205,14 @@ const Home = ()=>{
                                         children: "More About"
                                     }, void 0, false, {
                                         fileName: "src/frontend/pages/Home/Home.js",
-                                        lineNumber: 91,
+                                        lineNumber: 99,
                                         columnNumber: 64
                                     }, undefined),
                                     " "
                                 ]
                             }, void 0, true, {
                                 fileName: "src/frontend/pages/Home/Home.js",
-                                lineNumber: 91,
+                                lineNumber: 99,
                                 columnNumber: 17
                             }, undefined)
                         ]
@@ -59259,7 +59296,7 @@ const Header = ()=>{
         if (user == 'null') setUserInfo('');
         else setUserInfo(user);
         setTimeout(()=>{
-            _axiosDefault.default.post('http://localhost:3000/img', {
+            _axiosDefault.default.post('https://direct-meet-2478y.ondigitalocean.app/img', {
                 email: user.email
             }).then((data)=>{
                 setImgSrc(data.data.img);
@@ -59267,7 +59304,7 @@ const Header = ()=>{
         }, 10);
     }, []);
     const Logout = ()=>{
-        _axiosDefault.default.post('http://localhost:3000/user/logout').then((data)=>{
+        _axiosDefault.default.post('https://direct-meet-2478y.ondigitalocean.app/user/logout').then((data)=>{
             if (data.data.message === 'user logged out') {
                 localStorage.setItem('token', 'null');
                 localStorage.setItem('user', 'null');
@@ -59291,7 +59328,7 @@ const Header = ()=>{
                         originalname: x.files[0].name,
                         mimetype: x.files[0].type
                     };
-                    _axiosDefault.default.post('http://localhost:3000/uploadphoto', data).then((e)=>{
+                    _axiosDefault.default.post('https://direct-meet-2478y.ondigitalocean.app/uploadphoto', data).then((e)=>{
                         console.log('img updated .. ');
                     });
                 };
@@ -59476,7 +59513,7 @@ const Header = ()=>{
                                         const data = {
                                             Email: userInfo.email
                                         };
-                                        _axiosDefault.default.post('http://localhost:3000/DeleteProfilePhoto', data);
+                                        _axiosDefault.default.post('https://direct-meet-2478y.ondigitalocean.app/DeleteProfilePhoto', data);
                                         location.reload();
                                     },
                                     children: " Delete Profile Photo "
@@ -59498,7 +59535,7 @@ const Header = ()=>{
                                                 };
                                                 localStorage.setItem('token', 'null');
                                                 localStorage.setItem('user', 'null');
-                                                _axiosDefault.default.post('http://localhost:3000/DeleteAccount', data);
+                                                _axiosDefault.default.post('https://direct-meet-2478y.ondigitalocean.app/DeleteAccount', data);
                                                 navigate(`/`);
                                                 location.reload();
                                             }
@@ -59623,7 +59660,7 @@ const Edit_Profile = (props)=>{
                 password: password,
                 confirmEmail: confirmEmail
             };
-            _axiosDefault.default.post('http://localhost:3000/user/update', data).then(()=>{
+            _axiosDefault.default.post('https://direct-meet-2478y.ondigitalocean.app/user/update', data).then(()=>{
                 localStorage.setItem('user', JSON.stringify(data));
                 location.reload();
             });
@@ -61358,6 +61395,6 @@ module.exports = function inherits(ctor, superCtor) {
     }
 };
 
-},{}],"iLydp":[function() {},{}]},["kn9T2","3D7CW","6o9w8"], "6o9w8", "parcelRequiref4b7")
+},{}],"iLydp":[function() {},{}]},["kn9T2","aqyyN","6o9w8"], "6o9w8", "parcelRequiref4b7")
 
 //# sourceMappingURL=index.4c0418ca.js.map
