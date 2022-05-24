@@ -372,17 +372,17 @@ const MeetingPage = (props) => {
                (meetingLink)?
                <div className="meetingLink" > 
                <i class="fa-solid fa-xmark" title='exit' onClick={()=>{ setMeetingLink(false) }} ></i>
-              
+               {/* https://direct-meet-2478y.ondigitalocean.app/Meetingea1a6dff-d3a5-4380-badf-998f316115e1 */}
                <p> Meeting Link </p>
-               <p>{document.location.href.substring(22,1000)} 
+               <p>{document.location.href.substring(45,1000)} 
                <CopyToClipboard text={document.location.href.substring(0,1000)}>
                <i class="fa-regular fa-clone" title='copy link' ></i>
                </CopyToClipboard>
                
                </p>
                <p> Meeting ID </p> 
-               <p>{document.location.href.substring(29,1000)} 
-               <CopyToClipboard text={document.location.href.substring(29,1000)}>
+               <p>{document.location.href.substring(52,1000)} 
+               <CopyToClipboard text={document.location.href.substring(52,1000)}>
                <i class="fa-regular fa-clone" title='copy link' ></i> 
                </CopyToClipboard>
               
