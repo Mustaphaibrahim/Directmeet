@@ -615,10 +615,10 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     exports.setSignature = setSignature;
 })();
 
-},{}],"aqyyN":[function(require,module,exports) {
+},{}],"esWfX":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
-var HMR_PORT = 49882;
+var HMR_PORT = 51139;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 module.bundle.HMR_BUNDLE_ID = "2aaabacf4c0418ca";
@@ -39027,7 +39027,7 @@ const MeetingPage = (props)=>{
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                         children: [
-                            document.location.href.substring(22, 1000),
+                            document.location.href.substring(45, 1000),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactCopyToClipboard.CopyToClipboard, {
                                 text: document.location.href.substring(0, 1000),
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
@@ -39058,9 +39058,9 @@ const MeetingPage = (props)=>{
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                         children: [
-                            document.location.href.substring(29, 1000),
+                            document.location.href.substring(52, 1000),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactCopyToClipboard.CopyToClipboard, {
-                                text: document.location.href.substring(29, 1000),
+                                text: document.location.href.substring(52, 1000),
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("i", {
                                     class: "fa-regular fa-clone",
                                     title: "copy link"
@@ -61395,6 +61395,6 @@ module.exports = function inherits(ctor, superCtor) {
     }
 };
 
-},{}],"iLydp":[function() {},{}]},["kn9T2","aqyyN","6o9w8"], "6o9w8", "parcelRequiref4b7")
+},{}],"iLydp":[function() {},{}]},["kn9T2","esWfX","6o9w8"], "6o9w8", "parcelRequiref4b7")
 
 //# sourceMappingURL=index.4c0418ca.js.map
